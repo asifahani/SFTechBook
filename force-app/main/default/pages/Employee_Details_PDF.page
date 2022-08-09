@@ -1,0 +1,111 @@
+<apex:page standardController="Employee_Details__c" renderAs="pdf" extensions="retrieveEmployeeDetails">
+
+    <div style="border-style:solid;border-width:1px;padding:10px">
+        <div style="background-color:#ccd7e8;padding:4px;">
+            <div style="font-family:Bree-serif;">
+                <center>
+                    <h1>Employee Details</h1>
+                </center>
+            </div>
+        </div>
+
+        <div style="text-align:left;font-size:12pt;">
+
+
+            <table>
+                <div style="background-color:#afb3b3;padding:0px;">
+                    <h3 style="margin-left:3px;font-family:Roboto;">Personal Information</h3>
+                </div>
+                <div style="margin-left:10px">
+                    <tr>
+                        <th>Employee Name :</th>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.First_Name__c} {!Employee_Details__c.Last_Name__c}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Date Of Birth :</th>
+                        <td>
+                            <apex:outputText value="{0,date,MM/dd/yyyy}">
+                                <apex:param value="{!Employee_Details__c.Date_Of_Birth__c}" /></apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Age :</th>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Age__c}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email :</th>
+                        <td>
+                            <apex:outputText style="font-style:Italic;font-family:Caveat;" value="{!Employee_Details__c.Email__c}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Gender :</th>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Gender__c}" />
+                        </td>
+                    </tr>
+                </div>
+                <div style="background-color:#afb3b3;padding:0px;">
+                    <h3 style="margin-left:3px">Employee Information</h3>
+                </div>
+                <div style="margin-left:10px">
+                    <tr>
+                        <th>Work Location :</th>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Work_Location__c}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Professional profile :</th>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.professional_profile__c}" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Social profile :</th>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Social_profile__c}" />
+                        </td>
+                    </tr>
+                </div>
+                <div style="background-color:#afb3b3;padding:0px;">
+
+                    <h3 style="margin-left:3px">Address Information</h3>
+                </div>
+                <div style="margin-left:10px">
+                    <tr>
+                        <th>Address :</th>
+
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Address__Street__s}" />
+                        </td>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Address__City__s}" />
+                        </td>
+
+
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Address__StateCode__s}" />
+                        </td>
+                        <td>
+                            <apex:outputText value="{!Employee_Details__c.Address__PostalCode__s}" />
+                        </td>
+                        <td>
+                            <apex:outputText value="{!empList.Address__CountryCode__s}" />
+                        </td>
+                    </tr>
+                </div>
+            </table>
+
+
+
+
+        </div>
+    </div>
+
+
+</apex:page>
