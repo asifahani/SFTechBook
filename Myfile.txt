@@ -1,3 +1,0 @@
-HI,
-
-we learnt how to create a new branch
